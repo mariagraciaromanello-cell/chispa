@@ -18,7 +18,7 @@
    No se inventó ninguna URL real: son placeholders.
 --------------------------------------------------------- */
 const URL_REGALA_BIEN = "URL_REGALA_BIEN";
-const URL_LA_RULETA = "URL_LA_RULETA";
+const URL_LA_RULETA = "https://mariagraciaromanello-cell.github.io/quelasuertedecida/";
 const URL_CUANTO_ME_CUESTA = "URL_CUANTO_ME_CUESTA";
 const URL_MI_CUENTA = "URL_MI_CUENTA";
 
