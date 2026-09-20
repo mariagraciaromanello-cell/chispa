@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CHISPA | Pequeñas herramientas para todos los días</title>
+  <meta name="description" content="Descubrí pequeñas herramientas gratuitas para decidir, organizar, calcular y resolver cosas de todos los días." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CHISPA | Pequeñas herramientas para todos los días" />
+  <meta property="og:description" content="Descubrí pequeñas herramientas gratuitas para decidir, organizar, calcular y resolver cosas de todos los días." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon: logo de CHISPA en SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FFD166'/%3E%3Cstop offset='100%25' stop-color='%23FF6B4A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23241B33'/%3E%3Cpath d='M34 6 14 36h13l-3 22 22-32H33l4-20z' fill='url(%23g)'/%3E%3C/svg%3E" />
+
+  <!-- Tipografías: Poppins para títulos, Nunito para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#inicio" aria-label="CHISPA — ir al inicio">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="sparkGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFD166" />
+              <stop offset="100%" stop-color="#FF6B4A" />
+            </linearGradient>
+          </defs>
+          <path d="M34 6 14 36h13l-3 22 22-32H33l4-20z" fill="url(#sparkGradient)" />
+        </svg>
+        <span class="logo-text">CHISPA</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="primaryNav" class="primary-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#miniapps">Miniapps</a></li>
+          <li><a href="#sobre-chispa">Sobre CHISPA</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">CHISPA</p>
+        <h1 class="hero-title">Pequeñas herramientas para<br class="only-desktop" /> hacerte la vida un poquito más fácil.</h1>
+        <p class="hero-text">Un lugar para encontrar pequeñas herramientas gratuitas que te ayudan a decidir, organizar, calcular y resolver cosas de todos los días.</p>
+        <a href="#miniapps" class="btn btn-primary" id="explorarBtn">Explorar miniapps</a>
+      </div>
+    </section>
+
+    <!-- ===================== MINIAPPS ===================== -->
+    <section id="miniapps" class="miniapps-section">
+      <div class="section-inner">
+        <h2 class="section-title">Nuestras miniapps</h2>
+        <p class="section-lead">Elegí una herramienta y probala gratis.</p>
+
+        <!-- Las tarjetas de miniapps se generan dinámicamente desde script.js -->
+        <div class="miniapps-grid" id="miniappsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PRÓXIMAMENTE ===================== -->
+    <section class="growing-section" aria-labelledby="growingTitle">
+      <div class="section-inner">
+        <h2 class="section-title" id="growingTitle">Chispa está creciendo</h2>
+        <p class="section-lead">Estamos preparando nuevas herramientas gratuitas para vos.</p>
+
+        <div class="coming-soon-card">
+          <span class="coming-soon-badge">Muy pronto</span>
+          <h3 class="coming-soon-title">Creá tu propia página en CHISPA</h3>
+          <p class="coming-soon-text">Próximamente vas a poder crear tu propia página, agregar tus enlaces y compartirla con quien quieras.</p>
+          <button type="button" class="btn btn-secondary" id="proximamenteBtn" aria-disabled="true">
+            Próximamente
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE CHISPA ===================== -->
+    <section id="sobre-chispa" class="about-section">
+      <div class="section-inner about-inner">
+        <h2 class="section-title">¿Qué es CHISPA?</h2>
+        <p>CHISPA nace como una colección de pequeñas herramientas digitales pensadas para resolver cosas concretas de todos los días.</p>
+        <p>Hoy podés utilizar nuestras miniapps gratis. En el futuro, CHISPA crecerá para que cada persona pueda crear y personalizar su propio espacio.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="#inicio" aria-label="CHISPA — ir al inicio">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path d="M34 6 14 36h13l-3 22 22-32H33l4-20z" fill="url(#sparkGradient)" />
+          </svg>
+          <span class="logo-text">CHISPA</span>
+        </a>
+        <p class="footer-tagline">Pequeñas herramientas para hacerte la vida un poquito más fácil.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#miniapps">Miniapps</a></li>
+          <li><a href="#sobre-chispa">Sobre CHISPA</a></li>
+        </ul>
+      </nav>
+
+      <!-- Espacio preparado para futuras redes sociales -->
+      <div class="footer-social" aria-label="Redes sociales (próximamente)"></div>
+    </div>
+    <p class="footer-copy">© 2026 CHISPA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
