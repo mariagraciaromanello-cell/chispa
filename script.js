@@ -21,7 +21,7 @@ const URL_REGALA_BIEN = "https://mariagraciaromanello-cell.github.io/regalabien/
 const URL_LA_RULETA = "https://mariagraciaromanello-cell.github.io/quelasuertedecida/";
 const URL_CUANTO_ME_CUESTA = "https://mariagraciaromanello-cell.github.io/cuantocuesta";
 const URL_MI_CUENTA = "https://mariagraciaromanello-cell.github.io/micuenta/";
-
+const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/";
 /* ---------------------------------------------------------
    2. DATOS DE LAS MINIAPPS
    ---------------------------------------------------------
@@ -63,7 +63,16 @@ const miniapps = [
     boton: "Abrir Mi cuenta",
     url: URL_MI_CUENTA,
     accent: "var(--color-spark-2)"
-  }
+  },
+{
+  icono: "🌿",
+  nombre: "Mi Pequeño Jardín",
+  descripcion: "Registrá tus plantas, recordá sus riegos y llevá un pequeño diario de crecimiento.",
+  boton: "Abrir Mi Pequeño Jardín",
+  url: URL_MI_PEQUENO_JARDIN,
+  accent: "var(--color-teal)"
+}
+
 ];
 
 /* ---------------------------------------------------------
