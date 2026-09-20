@@ -19,7 +19,7 @@
 --------------------------------------------------------- */
 const URL_REGALA_BIEN = "https://mariagraciaromanello-cell.github.io/regalabien/";
 const URL_LA_RULETA = "https://mariagraciaromanello-cell.github.io/quelasuertedecida/";
-const URL_CUANTO_ME_CUESTA = "URL_CUANTO_ME_CUESTA";
+const URL_CUANTO_ME_CUESTA = "https://mariagraciaromanello-cell.github.io/cuantocuesta";
 const URL_MI_CUENTA = "URL_MI_CUENTA";
 
 /* ---------------------------------------------------------
