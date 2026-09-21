@@ -21,7 +21,7 @@ const URL_REGALA_BIEN = "https://mariagraciaromanello-cell.github.io/regalabien/
 const URL_LA_RULETA = "https://mariagraciaromanello-cell.github.io/quelasuertedecida/";
 const URL_CUANTO_ME_CUESTA = "https://mariagraciaromanello-cell.github.io/cuantocuesta";
 const URL_MI_CUENTA = "https://mariagraciaromanello-cell.github.io/micuenta/";
-const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/";
+const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/"; 
 /* ---------------------------------------------------------
    2. DATOS DE LAS MINIAPPS
    ---------------------------------------------------------
