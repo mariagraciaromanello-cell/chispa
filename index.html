@@ -64,9 +64,136 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-inner">
         <p class="hero-eyebrow">CHISPA</p>
-colocando contador de visitas
+colocando contador de visitas inicio
     contador de visitas
-    <script src="https://mariagraciaromanello-cell.github.io/chispacontador/contador.js" data-id="ABC123"></script>aaaaaaa
+    
+<script>
+(function () {
+
+    // ==================================================
+    // CHISPAS CUENTA
+    // ==================================================
+
+    const WEBHOOK_URL = "https://hook.us2.make.com/wl18cknohx6537wiq5x6m1kjjp3k5egb";
+
+    // ID ÚNICO DE LA PÁGINA / CLIENTE
+    const ID_PAGINA = "PRUEBA-001";
+
+
+    // ==================================================
+    // VISITANTE ANÓNIMO
+    // ==================================================
+
+    let visitante = localStorage.getItem(
+        "chispas_cuenta_visitante"
+    );
+
+    if (!visitante) {
+
+        visitante =
+            "visitante-" +
+            Date.now() +
+            "-" +
+            Math.random()
+                .toString(36)
+                .substring(2, 10);
+
+        localStorage.setItem(
+            "chispas_cuenta_visitante",
+            visitante
+        );
+    }
+
+
+    // ==================================================
+    // ID ÚNICO DE ESTA VISITA
+    // ==================================================
+
+    const idVisita =
+        "visita-" +
+        Date.now() +
+        "-" +
+        Math.random()
+            .toString(36)
+            .substring(2, 10);
+
+
+    // ==================================================
+    // FECHA Y HORA DE ARGENTINA
+    // ==================================================
+
+    const ahora = new Date();
+
+    const fechaHora =
+        new Intl.DateTimeFormat("es-AR", {
+            timeZone: "America/Argentina/Buenos_Aires",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        }).format(ahora);
+
+
+    // ==================================================
+    // INFORMACIÓN DE LA VISITA
+    // ==================================================
+
+    const pagina =
+        window.location.href;
+
+    const referer =
+        document.referrer || "directo";
+
+    const userAgent =
+        navigator.userAgent;
+
+
+    // ==================================================
+    // INFORMACIÓN QUE VA A MAKE
+    // ==================================================
+
+    const datos = {
+
+        id_visita: idVisita,
+
+        id_pagina: ID_PAGINA,
+
+        fecha_hora: fechaHora,
+
+        visitante: visitante,
+
+        pagina: pagina,
+
+        referer: referer,
+
+        user_agent: userAgent
+
+    };
+
+
+    // ==================================================
+    // ENVIAR A MAKE
+    // ==================================================
+
+    fetch(WEBHOOK_URL, {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(datos),
+
+        keepalive: true
+
+    }).catch(function () {
+
+        
+colocando contador de visitas final 
         <h1 class="hero-title">Pequeñas herramientas para<br class="only-desktop" /> hacerte la vida un poquito más fácil.</h1>
         <p class="hero-text">Un lugar para encontrar pequeñas herramientas gratuitas que te ayudan a decidir, organizar, calcular y resolver cosas de todos los días.</p>
         <a href="#miniapps" class="btn btn-primary" id="explorarBtn">Explorar miniapps</a>
