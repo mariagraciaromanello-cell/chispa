@@ -67,260 +67,112 @@
 colocando contador de visitas inicio
   
 
+```html
 <script>
-(function () {
 
-    // ==================================================
-    // CHISPAS CUENTA
-    // ==================================================
+const WEBHOOK_URL = "URL_DEL_WEBHOOK";
+const ID_PAGINA = "PRUEBA-001";
 
-    const WEBHOOK_URL = "https://hook.us2.make.com/wl18cknohx6537wiq5x6m1kjjp3k5egb";
 
-    // ID ÚNICO DE LA PÁGINA / CLIENTE
-    const ID_PAGINA = "PRUEBA-001";
+// VISITANTE ANÓNIMO
 
+let visitante = localStorage.getItem("chispas_visitante");
 
-    // ==================================================
-    // VISITANTE ANÓNIMO
-    // ==================================================
+if (!visitante) {
+    visitante = "v-" + Date.now() + "-" + Math.random().toString(36).substring(2, 8);
+    localStorage.setItem("chispas_visitante", visitante);
+}
 
-    let visitante = localStorage.getItem(
-        "chispas_cuenta_visitante"
-    );
 
-    if (!visitante) {
+// ID DE LA VISITA
 
-        visitante =
-            "visitante-" +
-            Date.now() +
-            "-" +
-            Math.random()
-                .toString(36)
-                .substring(2, 10);
+const idVisita = "vis-" + Date.now() + "-" + Math.random().toString(36).substring(2, 8);
 
-        localStorage.setItem(
-            "chispas_cuenta_visitante",
-            visitante
-        );
-    }
 
+// FECHA Y HORA ARGENTINA
 
-    // ==================================================
-    // ID ÚNICO DE ESTA VISITA
-    // ==================================================
+const ahora = new Date();
 
-    const idVisita =
-        "visita-" +
-        Date.now() +
-        "-" +
-        Math.random()
-            .toString(36)
-            .substring(2, 10);
+const fechaHora = new Intl.DateTimeFormat("es-AR", {
+    timeZone: "America/Argentina/Buenos_Aires",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+}).format(ahora);
 
 
-    // ==================================================
-    // FECHA Y HORA DE ARGENTINA
-    // ==================================================
+// DATOS
 
-    const ahora = new Date();
+const datos = {
+    id_visita: idVisita,
+    id_pagina: ID_PAGINA,
+    fecha_hora: fechaHora,
+    visitante: visitante,
+    pagina: window.location.href,
+    referer: document.referrer || "directo",
+    user_agent: navigator.userAgent
+};
 
-    const fechaHora =
-        new Intl.DateTimeFormat("es-AR", {
-            timeZone: "America/Argentina/Buenos_Aires",
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: false
-        }).format(ahora);
 
+// ENVIAR A MAKE
 
-    // ==================================================
-    // INFORMACIÓN DE LA VISITA
-    // ==================================================
+fetch(WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(datos)
+});
 
-    const pagina =
-        window.location.href;
 
-    const referer =
-        document.referrer || "directo";
+// PEQUEÑO LOGO
 
-    const userAgent =
-        navigator.userAgent;
+const logo = document.createElement("div");
 
+logo.innerHTML = `
+<svg width="120" height="32" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg">
 
-    // ==================================================
-    // INFORMACIÓN QUE VA A MAKE
-    // ==================================================
+<polyline
+points="4,22 18,18 30,21 43,11 56,15 69,7"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 
-    const datos = {
+<circle cx="75" cy="6" r="2" fill="currentColor"/>
+<circle cx="82" cy="11" r="1.5" fill="currentColor"/>
+<circle cx="89" cy="5" r="1" fill="currentColor"/>
 
-        id_visita: idVisita,
+<text
+x="4"
+y="30"
+font-family="Arial"
+font-size="9"
+font-weight="600"
+fill="currentColor">
+CHISPAS CUENTA
+</text>
 
-        id_pagina: ID_PAGINA,
+</svg>
+`;
 
-        fecha_hora: fechaHora,
+logo.style.position = "fixed";
+logo.style.right = "10px";
+logo.style.bottom = "10px";
+logo.style.zIndex = "999999";
+logo.style.color = "#777";
+logo.style.opacity = "0.65";
+logo.style.pointerEvents = "none";
 
-        visitante: visitante,
+document.body.appendChild(logo);
 
-        pagina: pagina,
-
-        referer: referer,
-
-        user_agent: userAgent
-
-    };
-
-
-    // ==================================================
-    // ENVIAR A MAKE
-    // ==================================================
-
-    fetch(WEBHOOK_URL, {
-
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify(datos),
-
-        keepalive: true
-
-    }).catch(function () {
-
-        // Si falla el envío,
-        // no molestamos al visitante.
-
-    });
-
-
-    // ==================================================
-    // PEQUEÑO ICONO CHISPAS CUENTA
-    // ==================================================
-
-    function crearIcono() {
-
-        const icono =
-            document.createElement("div");
-
-        icono.innerHTML = `
-
-            <svg
-                width="118"
-                height="32"
-                viewBox="0 0 118 32"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-
-                <!-- gráfico -->
-                <polyline
-                    points="4,22 18,18 30,21 43,11 56,15 69,7"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-
-                <!-- chispas -->
-                <circle
-                    cx="75"
-                    cy="6"
-                    r="2"
-                    fill="currentColor"
-                />
-
-                <circle
-                    cx="82"
-                    cy="11"
-                    r="1.4"
-                    fill="currentColor"
-                />
-
-                <circle
-                    cx="88"
-                    cy="5"
-                    r="1"
-                    fill="currentColor"
-                />
-
-                <!-- nombre -->
-                <text
-                    x="4"
-                    y="30"
-                    font-family="Arial, sans-serif"
-                    font-size="9"
-                    font-weight="600"
-                    fill="currentColor"
-                >
-                    CHISPAS CUENTA
-                </text>
-
-            </svg>
-        `;
-
-
-        // apariencia
-
-        icono.style.position =
-            "fixed";
-
-        icono.style.right =
-            "10px";
-
-        icono.style.bottom =
-            "10px";
-
-        icono.style.zIndex =
-            "999999";
-
-        icono.style.color =
-            "#777";
-
-        icono.style.opacity =
-            "0.65";
-
-        icono.style.pointerEvents =
-            "none";
-
-
-        // colocar cuando exista BODY
-
-        if (document.body) {
-
-            document.body.appendChild(
-                icono
-            );
-
-        } else {
-
-            document.addEventListener(
-                "DOMContentLoaded",
-                function () {
-
-                    document.body.appendChild(
-                        icono
-                    );
-
-                }
-            );
-
-        }
-
-    }
-
-
-    // Crear icono
-
-    crearIcono();
-
-
-})();
 </script>
+```
 
 
         
