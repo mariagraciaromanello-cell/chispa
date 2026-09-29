@@ -65,8 +65,8 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">CHISPA</p>
 colocando contador de visitas inicio
-    contador de visitas
-    
+  
+
 <script>
 (function () {
 
@@ -191,6 +191,137 @@ colocando contador de visitas inicio
         keepalive: true
 
     }).catch(function () {
+
+        // Si falla el envío,
+        // no molestamos al visitante.
+
+    });
+
+
+    // ==================================================
+    // PEQUEÑO ICONO CHISPAS CUENTA
+    // ==================================================
+
+    function crearIcono() {
+
+        const icono =
+            document.createElement("div");
+
+        icono.innerHTML = `
+
+            <svg
+                width="118"
+                height="32"
+                viewBox="0 0 118 32"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <!-- gráfico -->
+                <polyline
+                    points="4,22 18,18 30,21 43,11 56,15 69,7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <!-- chispas -->
+                <circle
+                    cx="75"
+                    cy="6"
+                    r="2"
+                    fill="currentColor"
+                />
+
+                <circle
+                    cx="82"
+                    cy="11"
+                    r="1.4"
+                    fill="currentColor"
+                />
+
+                <circle
+                    cx="88"
+                    cy="5"
+                    r="1"
+                    fill="currentColor"
+                />
+
+                <!-- nombre -->
+                <text
+                    x="4"
+                    y="30"
+                    font-family="Arial, sans-serif"
+                    font-size="9"
+                    font-weight="600"
+                    fill="currentColor"
+                >
+                    CHISPAS CUENTA
+                </text>
+
+            </svg>
+        `;
+
+
+        // apariencia
+
+        icono.style.position =
+            "fixed";
+
+        icono.style.right =
+            "10px";
+
+        icono.style.bottom =
+            "10px";
+
+        icono.style.zIndex =
+            "999999";
+
+        icono.style.color =
+            "#777";
+
+        icono.style.opacity =
+            "0.65";
+
+        icono.style.pointerEvents =
+            "none";
+
+
+        // colocar cuando exista BODY
+
+        if (document.body) {
+
+            document.body.appendChild(
+                icono
+            );
+
+        } else {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+
+                    document.body.appendChild(
+                        icono
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+
+    // Crear icono
+
+    crearIcono();
+
+
+})();
+</script>
+
 
         
 colocando contador de visitas final 
