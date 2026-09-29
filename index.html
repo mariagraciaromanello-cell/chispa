@@ -67,7 +67,7 @@
 colocando contador de visitas inicio
   
 
-```html
+
 <script>
 
 const WEBHOOK_URL = "URL_DEL_WEBHOOK";
@@ -91,9 +91,7 @@ const idVisita = "vis-" + Date.now() + "-" + Math.random().toString(36).substrin
 
 // FECHA Y HORA ARGENTINA
 
-const ahora = new Date();
-
-const fechaHora = new Intl.DateTimeFormat("es-AR", {
+const partes = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Argentina/Buenos_Aires",
     year: "numeric",
     month: "2-digit",
@@ -102,7 +100,23 @@ const fechaHora = new Intl.DateTimeFormat("es-AR", {
     minute: "2-digit",
     second: "2-digit",
     hour12: false
-}).format(ahora);
+}).formatToParts(ahora);
+
+const p = {};
+
+partes.forEach(function(parte) {
+    if (parte.type !== "literal") {
+        p[parte.type] = parte.value;
+    }
+});
+
+const fechaHora =
+    p.year + "-" +
+    p.month + "-" +
+    p.day + " " +
+    p.hour + ":" +
+    p.minute + ":" +
+    p.second;
 
 
 // DATOS
