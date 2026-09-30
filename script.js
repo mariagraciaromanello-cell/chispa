@@ -35,7 +35,7 @@ const URL_MATRIZ_AMBIENTAL = "https://mariagraciaromanello-cell.github.io/Matriz
 const miniapps = [
   {
     icono: "🎁",
-    nombre: "Regalá bien",
+    nombre: "Regalá bien -",
     descripcion: "Encontrá ideas de regalos según la persona, la ocasión, tu presupuesto y sus gustos.",
     boton: "Abrir Regalá bien",
     url: URL_REGALA_BIEN,
