@@ -81,7 +81,7 @@ const miniapps = [
   boton: "Abrir ¿Dónde lo guardé?",
   url: URL_DONDE_LO_GUARDE,
   accent: "var(--color-spark-1)"
-}
+},
 {
   icono: "🌿",
   nombre: "Matriz Ambiental",
