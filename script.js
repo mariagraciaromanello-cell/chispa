@@ -74,15 +74,7 @@ const miniapps = [
   url: URL_MI_PEQUENO_JARDIN,
   accent: "var(--color-teal)"
 },
-{
-  icono: "📦",
-  nombre: "¿Dónde lo guardé?",
-  descripcion: "Guardá dónde pusiste tus cosas y encontralas rápidamente cuando las necesites.",
-  boton: "Abrir ¿Dónde lo guardé?",
-  url: URL_DONDE_LO_GUARDE,
-  accent: "var(--color-spark-1)"
-},
-{
+   {
   icono: "🌿",
   nombre: "Matriz Ambiental",
   tagline: "Evaluación preliminar de impactos",
@@ -90,6 +82,14 @@ const miniapps = [
   boton: "Abrir Matriz Ambiental",
   url: URL_MATRIZ_AMBIENTAL,
   accent: "var(--color-teal)"
+},
+{
+  icono: "📦",
+  nombre: "¿Dónde lo guardé?",
+  descripcion: "Guardá dónde pusiste tus cosas y encontralas rápidamente cuando las necesites.",
+  boton: "Abrir ¿Dónde lo guardé?",
+  url: URL_DONDE_LO_GUARDE,
+  accent: "var(--color-spark-1)"
 }
 ];
 
