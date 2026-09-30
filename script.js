@@ -23,6 +23,7 @@ const URL_CUANTO_ME_CUESTA = "https://mariagraciaromanello-cell.github.io/cuanto
 const URL_MI_CUENTA = "https://mariagraciaromanello-cell.github.io/micuenta/";
 const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/";
 const URL_DONDE_LO_GUARDE = "https://mariagraciaromanello-cell.github.io/dondeloguarde/";
+const URL_MATRIZ_AMBIENTAL = "https://mariagraciaromanello-cell.github.io/MatrizAmbiental/";
 /* ---------------------------------------------------------
    2. DATOS DE LAS MINIAPPS
    ---------------------------------------------------------
@@ -81,7 +82,15 @@ const miniapps = [
   url: URL_DONDE_LO_GUARDE,
   accent: "var(--color-spark-1)"
 }
-
+{
+  icono: "🌿",
+  nombre: "Matriz Ambiental",
+  tagline: "Evaluación preliminar de impactos",
+  descripcion: "Identificá y valorá de manera preliminar los posibles impactos ambientales de un proyecto.",
+  boton: "Abrir Matriz Ambiental",
+  url: URL_MATRIZ_AMBIENTAL,
+  accent: "var(--color-teal)"
+}
 ];
 
 /* ---------------------------------------------------------
