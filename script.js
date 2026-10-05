@@ -24,6 +24,7 @@ const URL_MI_CUENTA = "https://mariagraciaromanello-cell.github.io/micuenta/";
 const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/";
 const URL_DONDE_LO_GUARDE = "https://mariagraciaromanello-cell.github.io/dondeloguarde/";
 const URL_MATRIZ_AMBIENTAL = "https://mariagraciaromanello-cell.github.io/MatrizAmbiental/";
+const URL_QUE_COCINO = "https://mariagraciaromanello-cell.github.io/MatrizAmbiental/";
 /* ---------------------------------------------------------
    2. DATOS DE LAS MINIAPPS
    ---------------------------------------------------------
@@ -89,6 +90,14 @@ const miniapps = [
   descripcion: "Guardá dónde pusiste tus cosas y encontralas rápidamente cuando las necesites.",
   boton: "Abrir ¿Dónde lo guardé?",
   url: URL_DONDE_LO_GUARDE,
+  accent: "var(--color-spark-1)"
+},
+   {
+  icono: "🍳",
+  nombre: "¿Qué Cocino?",
+  descripcion: "Decile qué tenés en casa y descubrí qué podés preparar para el almuerzo o la cena.",
+  boton: "Abrir ¿Qué Cocino?",
+  url: URL_QUE_COCINO,
   accent: "var(--color-spark-1)"
 }
 ];
