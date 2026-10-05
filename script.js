@@ -24,7 +24,7 @@ const URL_MI_CUENTA = "https://mariagraciaromanello-cell.github.io/micuenta/";
 const URL_MI_PEQUENO_JARDIN = "https://mariagraciaromanello-cell.github.io/mipequejardin/";
 const URL_DONDE_LO_GUARDE = "https://mariagraciaromanello-cell.github.io/dondeloguarde/";
 const URL_MATRIZ_AMBIENTAL = "https://mariagraciaromanello-cell.github.io/MatrizAmbiental/";
-const URL_QUE_COCINO = "https://mariagraciaromanello-cell.github.io/MatrizAmbiental/";
+const URL_QUE_COCINO = "https://tengo-poco-cocino.base44.app";
 /* ---------------------------------------------------------
    2. DATOS DE LAS MINIAPPS
    ---------------------------------------------------------
